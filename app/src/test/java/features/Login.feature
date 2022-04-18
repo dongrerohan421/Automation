@@ -1,25 +1,20 @@
 Feature: Application login
 
-  Background:
-    Given Validate the browser
-    When Browser is triggered
-    Then Check if browser is started
-
-  @RegTest
+  @WebTest
   Scenario: Home page default login
     Given User is on NetBanking landing page
     When User login into to application with "Jin" and password "1234"
     Then Home page is populated
     And Cards displayed are "true"
 
-  @SmokeTest
+  @MobileTest
   Scenario: Home page default login
     Given User is on NetBanking landing page
     When User login into to application with "John" and password "4321"
     Then Home page is populated
     And Cards displayed are "false"
 
-  @SmokeTest
+  @MobileTest
   Scenario: Home page default login
     Given User is on NetBanking landing page
     When User signup with following details
@@ -27,7 +22,7 @@ Feature: Application login
     Then Home page is populated
     And Cards displayed are "false"
 
-  @RegTest
+  @WebTest
   Scenario Outline: Home page default login
     Given User is on NetBanking landing page
     When User login in to to application with <username> and password <passwd>
